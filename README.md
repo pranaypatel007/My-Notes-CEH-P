@@ -2,6 +2,22 @@
 My Notes CEH P
 
 
+Crypto
+	1. SNOW - 
+			1- Hide Data Using Whitespace Stegnography- snow -C -m "My swiss account number is 121212121212" -p "magic" readme.txt readme2.txt  (magic is password and your secret is stored in readme2.txt along with the content of readme.txt)
+			2- To Display Hidden Data- snow -C -p "magic" readme2.txt (then it will show the content of readme2.txt content)
+			3- Image Stegnography using Openstego- PRACTICE ??
+	2. Hashcalc - input file and select encoding. get the hash value
+	3. VeraCrypt
+	
+
+Sqlmap
+	sqlmap -u http://xyz.com --crawal 2 --batch
+	
+	sqlmap -u http://testphp.vulnweb.com/ --crawl 3 --technique="U" --batch
+	
+
+ 
 #Scanning Networks (always do sudo su) --> To be root
 1- Nmap scan for alive/active hosts command for 192.189.19.18- nmap -A 192.189.19.0/24 or nmap -T4 -A ip
 2- Zenmap/nmap command for TCP scan- First put the target ip in the Target: and then in the Command: put this command- nmap -sT -v 10.10.10.16
