@@ -1,4 +1,5 @@
-Scanning Networks:
+Module 03: Scanning Networks:
 	nmap
 	Host Discovery using - IP Scanner
 	Port and Service Discovery using Mega Ping
+	Port and Service Discovery using NetScanTools Pro
