@@ -1,5 +1,13 @@
 Module 03: Scanning Networks:
 	nmap
+		-sS Half scan. when firwall is enabled.
+		xxxx -oX out1.xml
+			xsltproc out1.xml -o host1.html
+			sudo chown user:user host1.html
+
+
 	Host Discovery using - IP Scanner
 	Port and Service Discovery using Mega Ping
 	Port and Service Discovery using NetScanTools Pro
+	Port scanning using sx tool
+
