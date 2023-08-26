@@ -26,6 +26,12 @@ Module 03: Scanning Networks:
 	Port and Service Discovery using NetScanTools Pro
 	Port scanning using sx tool
 
+	FQDN
+		nmap -p389 -sV -iL <target_list>
+		389 port will be running on 1 host only out of the complete subnet.
+			OR
+		nmap -p389 -sV <singleIp>
+
 Type of account:
 	cmd
 	net user (this will display list of user accounts)
@@ -92,12 +98,14 @@ Hydra
 	hiw to connect to ftp, if pass found
 		ftp x.x.x.x.
 		get filename.txt
-
+================================================================================================================================================================================================================================================
 Android
 	5555 - android port
 	adb connect ip.address:5555
 	adb shell
 	ls
+
+================================================================================================================================================================================================================================================
 
 Steganography / SNOW
 	go to the directory
@@ -163,7 +171,7 @@ Cryp Tool
 	now with ECB type demo
 	
 
-========================================================================
+================================================================================================================================================================================================================================================
 SQL Injection
 	try
 	username'--
@@ -180,7 +188,7 @@ sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that yo
 6.2 Use systeminfo for windows to get all os version
 6.3 Use uname -a for linux to get os version
 
-=====================================================================
+================================================================================================================================================================================================================================================
 OWASP ZAP
 	Automated scan
 	enter url/domain
@@ -188,7 +196,7 @@ OWASP ZAP
 
 	check Active Scan below
 	or check Alerts- SQL Injection-> drill down
-======================================================================
+===================================================================================================================================================================================================================================
 Wireshark
 
 	tcp.flags.syn == 1 and tcp.flags.ack == 0    (How many machines) or Go to statistics IPv4 addresses--> Source and Destination ---> Then you can apply the filter given. Check whose count is higher. also check destination and source ip address to verify.
@@ -198,7 +206,7 @@ Wireshark
 	convert in readable
 	http.request.method == POST   (for passwords) or click tools ---> credentials
 
-========================================================================
+=====================================================================================================================================================================================================================================
 Wi-FI
 	start monitoring
 		airodump-ng wlan0mon
@@ -212,3 +220,7 @@ Wi-FI
 
 	crack
 		aircrack-ng -b x.x.xb.s.s.id -w password.txt capture.cap
+
+	exam
+		aircrack-ng -a2 -b <target bssid> -w /path/to/wordlist.txt pcapfile
+
