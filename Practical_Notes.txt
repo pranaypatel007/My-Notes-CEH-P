@@ -1,5 +1,6 @@
 RDP 3389
 MySQL 3306
+find . -name sample.txt
 
 Module 03: Scanning Networks:
 	netdiscover
@@ -104,6 +105,16 @@ Android
 	adb connect ip.address:5555
 	adb shell
 	ls
+
+	copy file outside android
+		sudo adb pull /android/dir /output/location
+
+	use ent tool
+		ent -h
+		ent file1.elf
+
+	sha384sum
+		sha384sum file1.elf 
 
 ================================================================================================================================================================================================================================================
 
