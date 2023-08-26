@@ -243,3 +243,6 @@ Wi-FI
 	exam
 		aircrack-ng -a2 -b <target bssid> -w /path/to/wordlist.txt pcapfile
 
+=================================================
+Sqlmap
+	https://techyrick.com/sqlmap-full-tutorial/
