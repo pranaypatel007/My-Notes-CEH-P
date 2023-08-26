@@ -83,6 +83,66 @@ Metasploit
 Hashcat
 	hashcat -m 0 xxxxxxxx /rockyou.txt --force -O
 
+Hydra
+	hydra -l <username> -P /location/pass.txt se.rever.ip.addr ftp
+
+	hiw to connect to ftp, if pass found
+		ftp x.x.x.x.
+		get filename.txt
+
+Android
+	5555 - android port
+	adb connect ip.address:5555
+	adb shell
+	ls
+
+Steganography / SNOW
+	go to the directory
+	snow -C -m "my bank acc is 1212121" -p "iamPassword" readme.txt readme2.txt
+		this will store the content of readme.txt inside readme2.txt (output file). readme2.txt will auto create. it will have readme.txt file content and secret message
+
+	How to unlock
+		snow -C -p "iamPassword" readme2.txt
+		this will display the secret message. 
+
+Openstego
+	open app
+	Hide Data
+		Message file - secret message/file
+		Cover file - cover photo
+		output file - will autogenerate based on above input
+		enter pass and select encryption
+
+	Extract data
+		Input stego file - input the file which was encrypted
+		output file - autogenerate with content
+		pass -  and click extract data
+	
+
+hashCalc
+	open hashcalc.exe
+	select file and click calculate. this will generate the hash for various alg like md5/sha512
+
+
+VeraCrypt
+	used for disk encryption
+
+	Create volume - go with default--select location for o/p file - select algo - space - enter password - now move mouse randomly--- click format
+
+	now encrypted drive is created.
+
+	lets decrypt now
+	select driver - select encrypted drive file - mount and enter pass
+
+
+Crack Hashes
+	hashes.com
+	crackstation.com
+
+	convert md5 to plaintext.
+	if hashtype not mentioned above site will identify automatically.
+
+========================================================================
 Wi-FI
 	start monitoring
 		airodump-ng wlan0mon
