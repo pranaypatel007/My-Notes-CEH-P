@@ -1,15 +1,39 @@
 Module 03: Scanning Networks:
+	netdiscover
+		netdiscover -r xx.x.x.x.x
 	nmap
-		-sS Half scan. when firwall is enabled.
+		to scan to detect firewall settings:
+		nmap -sA x.x.x.x
+
+		-sS Half scan/stealthy scan. when firwall is enabled.
 		xxxx -oX out1.xml
 			xsltproc out1.xml -o host1.html
 			sudo chown user:user host1.html
+
+		-sU perform UDp scan. nmap -sU x.x.x.x
+		-sn perform ping scan . which sends ICMP requests to target host.
+			nmap -sn x.x.x.0/24
+
+		-A aggresive scan. 
+			nmap -A -T4 -v x.x.x.x.
 
 
 	Host Discovery using - IP Scanner
 	Port and Service Discovery using Mega Ping
 	Port and Service Discovery using NetScanTools Pro
 	Port scanning using sx tool
+
+Type of account:
+	cmd
+	net user (this will display list of user accounts)
+
+
+WPScan
+	wpscan --url https://xx.x.x.
+
+	wpscan --url https://xx.x.x. -e u (this will enumerate users)
+
+	wpscan --url https://xx.x.x. -user User --password /location/pass.txt (this will enumerate users)
 
 Metasploit
 	basic start
@@ -51,7 +75,10 @@ Metasploit
 
 	record all typed commands and its output
 		spool savemyhistory.txt
-		
+
+
+	------------------------ bruteforce usename and pass
+		use wordpress (if it does not  search module)
 
 Hashcat
 	hashcat -m 0 xxxxxxxx /rockyou.txt --force -O
