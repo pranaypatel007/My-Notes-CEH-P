@@ -11,6 +11,47 @@ Module 03: Scanning Networks:
 	Port and Service Discovery using NetScanTools Pro
 	Port scanning using sx tool
 
+Metasploit
+	basic start
+		systemctl enable apache
+		systemctl enable postgresql
+	
+	this is format
+		msfvenom -p payload options -f elf -o abc.elf 
+
+	start
+		msfconsole
+
+	help
+		msfconsole -h
+
+	search 
+		search ssh
+		or
+		search platform:windows name:ssh
+		or
+		search platform:windows name:ssh type:post
+		or
+
+	nmap from metasploit
+		db_nmap
+		db_nmap x.x.ip.addr -sV -p 21
+			o/p for example ssh version is vsftpd 2.3.1
+
+	search specific exploit
+		search name:vsftpd
+		info <exploit_no>
+
+		now use this exploit
+			use <exploit_no>
+			options
+			set RHOSTS x1x1x1x
+			set RPORT 45454
+			exploit
+
+	record all typed commands and its output
+		spool savemyhistory.txt
+		
 
 Hashcat
 	hashcat -m 0 xxxxxxxx /rockyou.txt --force -O
