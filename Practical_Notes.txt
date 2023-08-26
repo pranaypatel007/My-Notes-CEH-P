@@ -2,6 +2,7 @@ RDP 3389
 MySQL 3306
 find . -name sample.txt
 
+=====================================================================================================================================================================================================================================
 Module 03: Scanning Networks:
 	netdiscover
 		netdiscover -r xx.x.x.x.x
@@ -20,6 +21,13 @@ Module 03: Scanning Networks:
 
 		-A aggresive scan. 
 			nmap -A -T4 -v x.x.x.x.
+
+		vulnerability through nmap
+			nmap -Pn --script vuln ip.add.ress
+
+		vulnerabiliilty for smtp
+			nmap -p 25 --script=smtp-enum-users 192.168.0.27
+			nmap -p 25 --script=smtp-open-relay 192.168.0.27
 
 
 	Host Discovery using - IP Scanner
