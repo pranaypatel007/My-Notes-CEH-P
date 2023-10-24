@@ -1,5 +1,7 @@
 RDP 3389
 MySQL 3306
+Android 5555
+
 find . -name sample.txt
 
 https://github.com/infovault-Ytube/CEH-Practical-Notes
@@ -25,6 +27,7 @@ Module 03: Scanning Networks:
 			nmap -A -T4 -v x.x.x.x.
 
 		vulnerability through nmap
+			nmao -Pn --- this assumes it is already up and skips ICMP ping check.
 			nmap -Pn --script vuln ip.add.ress
 
 		vulnerabiliilty for smtp
@@ -43,11 +46,11 @@ Module 03: Scanning Networks:
 			OR
 		nmap -p389 -sV <singleIp>
 
-Type of account:
+check what all Type of user account present in windows:
 	cmd
 	net user (this will display list of user accounts)
 
-
+---- for enumerating user pass / brutforce
 WPScan
 	wpscan --url https://xx.x.x.
 
@@ -106,6 +109,9 @@ Hashcat
 Hydra
 	hydra -l <username> -P /location/pass.txt se.rever.ip.addr ftp://x.x.x.x
 
+	for ssh bruteforce
+	hydra -l <username> -P /location/pass.txt Ip.add ssh
+
 	hiw to connect to ftp, if pass found
 		ftp x.x.x.x.
 		get filename.txt
@@ -113,7 +119,7 @@ Hydra
 Android
 	5555 - android port
 	adb connect ip.address:5555
-	adb shell
+	adb shell (post this command you are inside android)
 	ls
 
 	copy file outside android
@@ -122,7 +128,10 @@ Android
 	use ent tool
 		ent -h
 		ent file1.elf
+		ent file2.elf
+		ent file3.elf
 
+	now the file which has highest elf value. executet this command
 	sha384sum
 		sha384sum file1.elf 
 
@@ -137,7 +146,7 @@ Steganography / SNOW
 		snow -C -p "iamPassword" readme2.txt
 		this will display the secret message. 
 
-Openstego
+Openstego used for encryption/decryption using image/txt file
 	open app
 	Hide Data
 		Message file - secret message/file
@@ -151,7 +160,7 @@ Openstego
 		pass -  and click extract data
 	
 
-hashCalc
+hashCalc used for generating Hash values like MD5/SHA1/etc
 	open hashcalc.exe
 	select file and click calculate. this will generate the hash for various alg like md5/sha512
 
@@ -167,7 +176,7 @@ VeraCrypt
 	select driver - select encrypted drive file - mount and enter pass
 
 
-Crack Hashes
+Crack Hashes online
 	hashes.com
 	crackstation.com
 
@@ -191,6 +200,16 @@ Cryp Tool
 
 	now with ECB type demo
 	
+==========================
+vertical Priviledge escalation
+	nmap -sV -p 22 192.1.1.0/24
+	in o/p check for port which has 22 as open
+	now connect this machine using ssh
+	now execute this command:
+		sudo -i
+		find . -name <name_of_file_to_search>
+		cat <filename>
+
 
 ================================================================================================================================================================================================================================================
 SQL Injection
@@ -208,6 +227,26 @@ sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --cookie="[cookie value that yo
 6.1 In the shell type-   TASKLIST  (to view the tasks)
 6.2 Use systeminfo for windows to get all os version
 6.3 Use uname -a for linux to get os version
+
+
+NEW
+list database
+	sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --dbs
+
+	sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --current-db
+
+get all tables
+	sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --tables -D <name of database>
+
+get all columns in the tables
+	sqlmap -u "http://www.xyz.com/profile.aspx?id=1" --columns -T <table_name> -D <name of database>
+
+Dump all details
+	sqlmap -u "http://www.xyz.com/profile.aspx?id=1" -T <table_name> -D <name of database> --dump
+
+
+
+
 
 ================================================================================================================================================================================================================================================
 OWASP ZAP
@@ -243,6 +282,12 @@ Wi-FI
 		aircrack-ng -b x.x.xb.s.s.id -w password.txt capture.cap
 
 	exam
+		first if bssid is not given, we may have to extract bssid from pcap file. for that open pcapfile in wireshark, and check for bssid value inside any request. value would be in round bracket.
+		or
+		aircrack-ng /path/to/pcapfile
+			it will list bssid that it has inside the file.
+
+		Now to brutforce the password:
 		aircrack-ng -a2 -b <target bssid> -w /path/to/wordlist.txt pcapfile
 
 =================================================
